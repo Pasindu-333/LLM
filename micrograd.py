@@ -53,6 +53,12 @@ class Value:
     def __truediv__(self, other):
         return self * other**-1
 
+    def __rtruediv__(self, other): # other / self
+        return other * self**-1
+
+    def __rsub__(self, other): # other - self
+        return other + (-self)
+
     def __neg__(self):
         return self * -1
     
@@ -182,27 +188,27 @@ class MLP:
 
 
 
-n = MLP(3, [4,4,1])
+# n = MLP(3, [4,4,1])
 
-xs = [[2.0, 3.0, -1.0],
-      [3.0, -1.0, 0.5],
-      [0.5, 1.0, 1.0],
-      [1.0, 1.0, -1.0]]
+# xs = [[2.0, 3.0, -1.0],
+#       [3.0, -1.0, 0.5],
+#       [0.5, 1.0, 1.0],
+#       [1.0, 1.0, -1.0]]
 
-ys =[1.0, -1.0, -1.0, 1.0] #desired targets
+# ys =[1.0, -1.0, -1.0, 1.0] #desired targets
 
-for k in range(50):
-    ypred = [n(x) for x in xs]
-    loss = sum((yout-ygt)**2 for ygt, yout in zip(ys, ypred))
+# for k in range(50):
+#     ypred = [n(x) for x in xs]
+#     loss = sum((yout-ygt)**2 for ygt, yout in zip(ys, ypred))
 
-    for p in n.parameters():
-        p.grad = 0.0
+#     for p in n.parameters():
+#         p.grad = 0.0
 
-    loss.backward()
+#     loss.backward()
 
-    for p in n.parameters():
-        p.data += -0.1 * p.grad
+#     for p in n.parameters():
+#         p.data += -0.1 * p.grad
 
-    print(k, loss.data)
+#     print(k, loss.data)
 
-print(ypred)
+# print(ypred)
