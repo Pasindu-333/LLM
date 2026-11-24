@@ -1,0 +1,1 @@
+# Building a chat AI from [Andrej Karpathy's lecture series](https://youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ&si=velNreeS2GRA-eR_)

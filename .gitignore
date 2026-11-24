@@ -1,0 +1,18 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code Code Runner temporary files
+tempCodeRunnerFile.*
+
+# Graphviz generated files
+*.gv
+*.gv.svg
+
+# PyTorch saved models & checkpoints
+*.pt
+*.pth
